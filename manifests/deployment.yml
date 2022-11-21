@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: primpythonscrpt 
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: primpythonscrpt
+  template:
+    metadata:
+      labels:
+        app: primpythonscrpt 
+    spec:
+      containers:
+        - name: primpythonscrpt 
+          image: azcertacr.azurecr.io/primpythonscrpt
+          ports:
+          - containerPort: 5000
